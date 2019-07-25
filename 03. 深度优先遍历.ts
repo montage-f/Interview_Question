@@ -5,7 +5,7 @@
 // 直至途中所有和v有路径相同的点都北方问道
 let dom: Element = document.querySelector('.parent');
 
-interface IDeepTraversal {
+interface IDeepTraversal_1 {
     (node: Element, nodeList?: Element[]): Element[]
 }
 
@@ -20,8 +20,11 @@ interface IDeepTraversal_2 {
     (list: IObject[]): any[]
 }
 
+interface IDeepTraversal_3 {
+    (obj: IObject[]): any[]
+}
 
-const deepTraversal_1: IDeepTraversal = (node, nodeList = []) => {
+const deepTraversal_1: IDeepTraversal_1 = (node, nodeList = []) => {
     if (!node) return;
     nodeList.push(node);
     let children = node.children;
@@ -82,3 +85,12 @@ const deepTraversal_2: IDeepTraversal_2 = (list) => {
     
 };
 console.log(deepTraversal_2(arr));
+
+// 通过深度优先进行深拷贝
+const deepTraversal_3: IDeepTraversal_3 = (list) => {
+    let newList = [];
+    
+    
+    
+    return newList;
+};

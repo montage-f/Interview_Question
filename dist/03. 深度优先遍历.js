@@ -62,3 +62,8 @@ var deepTraversal_2 = function (list) {
     return result;
 };
 console.log(deepTraversal_2(arr));
+// 通过深度优先进行深拷贝
+var deepTraversal_3 = function (list) {
+    var newList = [];
+    return newList;
+};
