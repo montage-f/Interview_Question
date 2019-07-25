@@ -68,7 +68,7 @@ let arr = [
                 name: '1-3'
             }
         ],
-        
+
     }
 ];
 
@@ -82,15 +82,7 @@ const deepTraversal_2: IDeepTraversal_2 = (list) => {
         map(item);
     });
     return result;
-    
+
 };
 console.log(deepTraversal_2(arr));
 
-// 通过深度优先进行深拷贝
-const deepTraversal_3: IDeepTraversal_3 = (list) => {
-    let newList = [];
-    
-    
-    
-    return newList;
-};
