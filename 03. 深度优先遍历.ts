@@ -33,8 +33,10 @@ const deepTraversal_1: IDeepTraversal_1 = (node, nodeList = []) => {
     }
     return nodeList;
 };
-
+console.time('计时器:');
 console.log(deepTraversal_1(dom));
+console.timeEnd('计时器:');
+
 
 let arr = [
     {

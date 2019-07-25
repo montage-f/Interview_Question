@@ -15,7 +15,9 @@ var deepTraversal_1 = function (node, nodeList) {
     }
     return nodeList;
 };
+console.time('计时器:');
 console.log(deepTraversal_1(dom));
+console.timeEnd('计时器:');
 var arr = [
     {
         name: '1',
