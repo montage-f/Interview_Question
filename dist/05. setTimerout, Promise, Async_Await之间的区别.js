@@ -4,6 +4,7 @@
 // 时间循环中有 宏任务列队 和 微任务列队
 //  经过下面的测试, 我们可以得出一个结论, 在代码执行的时候, 它依然是先去执行所有的同步函数,
 //  将异步函数存入到列队之中, 然后, 等待同步执行完成之后, 在对异步进行执行
+// async_await 与 Promise里面的then 哪个函数在前, 哪个函数先执行
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
