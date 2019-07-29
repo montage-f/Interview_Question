@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10. 分析比较opacity_0, visibility_hidden, display_none优劣和使用场景</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .parent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .parent div {
+            flex: 1;
+            border: 1px solid #ccc;
+        }
+
+        .parent div.opacity {
+            background: red;
+            opacity: 0;
+        }
+
+        .parent div.visibility {
+            background: yellow;
+            visibility: hidden;
+        }
+
+        .parent div.display {
+            background: gray;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="opacity">
+        opacity
+    </div>
+    <div class="visibility">
+        visibility
+    </div>
+    <div class="display">
+        display
+    </div>
+
+</div>
+
+
+</body>
+<script src="../dist/10.%20分析比较opacity_0,%20visibility_hidden,%20display_none优劣和使用场景.js"></script>
+</html>
