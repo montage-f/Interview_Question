@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12. 使用proxy实现vue双向绑定</title>
+    <style>
+        .box_1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box_1 .input_1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="box_1">
+    <input type="text" class="input_1">
+    <textarea name="" id="" cols="30" rows="10" class="textarea_1">hello world</textarea>
+</div>
+<div id="app">
+    <input type="text" v-model="num">
+    <button @click="add">add</button>
+    <div v-bind="num">1</div>
+</div>
+</body>
+<script src="../dist/12.%20使用proxy实现vue双向绑定.js"></script>
+</html>
