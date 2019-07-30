@@ -10,7 +10,7 @@ interface IO {
 }
 
 const o = {
-    text: '小樊'
+    text: 'hello world'
 };
 let input_1: HTMLInputElement = document.querySelector('.input_1');
 let textarea_1: HTMLInputElement = document.querySelector('.textarea_1');

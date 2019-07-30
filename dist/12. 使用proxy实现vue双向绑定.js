@@ -2,7 +2,7 @@
  * Created by MonTage_fz on 2019/7/30
  */
 var o = {
-    text: '小樊'
+    text: 'hello world'
 };
 var input_1 = document.querySelector('.input_1');
 var textarea_1 = document.querySelector('.textarea_1');
