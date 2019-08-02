@@ -25,3 +25,27 @@ var intersect = function (arr1, arr2) {
     return result;
 };
 console.log(intersect(q, w));
+// 随机生成一个长度为 10 的整数类型的数组，
+// 例如 [2, 10, 3, 4, 5, 11, 10, 11, 20]，将其排列成一个新数组，要求新数组形式如下，
+// 例如 [[2, 3, 4, 5], [10, 11], [20]]
+// 随机生成一个长度为10的数组
+var randomFun = function (length, min, max) {
+    return Array.from({ length: length }, function () { return Math.round(min + Math.random() * (max - min)); })
+        .sort(function (a, b) { return a - b; });
+};
+var formArr = function (arr) {
+    var obj = {};
+    var newArr = [];
+    Array.from(new Set(arr)).forEach(function (item) {
+        var intNum = Math.floor(item / 10);
+        if (!obj[intNum]) {
+            obj[intNum] = [];
+        }
+        obj[intNum].push(item);
+    });
+    for (var i in obj) {
+        newArr.push(obj[i]);
+    }
+    return newArr;
+};
+console.log(formArr(randomFun(10, 10, 100)));
