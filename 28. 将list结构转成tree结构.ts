@@ -65,3 +65,54 @@ const listToTree = (myId, PId, list) => {
     return nodes;
 };
 console.log(listToTree('ids', 'parentId', allList));
+
+let lists = [
+    {id: 1, name: '部门A', parentId: 0},
+    {id: 2, name: '部门B', parentId: 0},
+    {id: 3, name: '部门C', parentId: 1},
+    {id: 4, name: '部门D', parentId: 1},
+    {id: 5, name: '部门E', parentId: 2},
+    {id: 6, name: '部门F', parentId: 3},
+    {id: 7, name: '部门G', parentId: 2},
+    {id: 8, name: '部门H', parentId: 4}
+];
+const convert = (list): Array<any> => {
+    let res: Array<any> = [];
+    let map: Array<any> = list.reduce((p, v) => {
+        p[v.ids] = v;
+        return p;
+    }, {});
+    for (let item of list) {
+        if (item.parentId === 0) {
+            res.push(item);
+        }
+        if (Reflect.has(map, item.parentId)) {
+            const parent = map[item.parentId];
+            parent.children = parent.children || [];
+            parent.children.push(item);
+        }
+    }
+    return res;
+};
+console.log(convert(lists));
+
+const listToTree2 = (myId, PId, list): Array<any> => {
+    let result = [];
+    let map = list.reduce((p, i) => {
+        p[i[myId]] = i;
+        return p;
+    }, {});
+    for (let item of list) {
+        if (!item[PId]) {
+            result.push(item);
+        }
+        if (Reflect.has(map, item[PId])) {
+            let parent = map[item[PId]];
+            parent.children = parent.children || [];
+            parent.children.push(item);
+            
+        }
+    }
+    return result;
+};
+console.log(listToTree2('ids', 'parentId', allList));
