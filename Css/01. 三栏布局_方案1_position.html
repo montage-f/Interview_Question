@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01. 三栏布局_方案1_position</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            height: 500px;
+            background: #000;
+            position: relative; /*相对定位*/
+        }
+
+        .box div {
+            position: absolute; /*绝对定位*/
+        }
+
+        .box .left, .box .right {
+            width: 300px; /*两边固定*/
+            height: 100%;
+        }
+
+        .left {
+            background: red;
+            left: 0;
+            top: 0;
+        }
+
+        .middle {
+            width: 100%;
+            padding: 0 300px; /*通过padding, 将内容挤到可视区*/
+            color: white;
+        }
+
+        .right {
+            background: blue;
+            right: 0;
+            top: 0;
+
+        }
+    </style>
+</head>
+<body>
+<header>三栏布局, 左右宽度为300px, 中间自适应</header>
+<div class="box">
+    <div class="left"></div>
+    <div class="middle">
+        position布局
+        缺点: 脱离文档流, 后续的子元素, 也都需要脱离文档流
+    </div>
+    <div class="right"></div>
+</div>
+
+</body>
+</html>
