@@ -26,8 +26,8 @@ var allList = [
 var listToTree = function (myId, PId, list) {
     // 判断是否有父节点
     var isPId = function (PId, list) {
-        for (var i = 0; i < list.length; i++) {
-            if (list[i][myId] === PId) {
+        for (var i_1 = 0; i_1 < list.length; i_1++) {
+            if (list[i_1][myId] === PId) {
                 return true;
             }
         }
@@ -35,21 +35,21 @@ var listToTree = function (myId, PId, list) {
     };
     // 最顶层的节点
     var nodes = [];
-    for (var i = 0; i < list.length; i++) {
-        var item = list[i];
+    for (var i_2 = 0; i_2 < list.length; i_2++) {
+        var item = list[i_2];
         // 如果没有父节点, 那么就是顶层节点
         if (!isPId(item[PId], list)) {
             nodes.push(item);
         }
     }
     var toDo = [];
-    for (var i = 0; i < nodes.length; i++) {
-        toDo.push(nodes[i]);
+    for (var i_3 = 0; i_3 < nodes.length; i_3++) {
+        toDo.push(nodes[i_3]);
     }
     while (toDo.length) {
         var PNode = toDo.shift();
-        for (var i = 0; i < list.length; i++) {
-            var row = list[i];
+        for (var i_4 = 0; i_4 < list.length; i_4++) {
+            var row = list[i_4];
             if (row[PId] === PNode[myId]) {
                 if (PNode.children instanceof Array) {
                     PNode.children.push(row);

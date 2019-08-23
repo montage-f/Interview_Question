@@ -10,8 +10,8 @@ var deepTraversal_1 = function (node, nodeList) {
         return;
     nodeList.push(node);
     var children = node.children;
-    for (var i = 0; i < children.length; i++) {
-        deepTraversal_1(children[i], nodeList);
+    for (var i_1 = 0; i_1 < children.length; i_1++) {
+        deepTraversal_1(children[i_1], nodeList);
     }
     return nodeList;
 };

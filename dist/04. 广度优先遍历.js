@@ -15,8 +15,8 @@ var widthTraversal_1 = function (node) {
         var children = item.children;
         nodes.push(item);
         for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
-            var i = children_1[_i];
-            stack.push(i);
+            var i_1 = children_1[_i];
+            stack.push(i_1);
         }
     }
     return nodes;

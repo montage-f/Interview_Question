@@ -5,13 +5,13 @@
 var formatChart = function (str) {
     var min = 'abcdefghijklmnopqrstuvwxyz';
     var s = '';
-    for (var i = 0; i < str.length; i++) {
-        var num_1 = min.indexOf(str[i]);
+    for (var i_1 = 0; i_1 < str.length; i_1++) {
+        var num_1 = min.indexOf(str[i_1]);
         if (num_1 >= 0) {
             s += str[num_1].toUpperCase();
         }
         else {
-            s += str[i].toLowerCase();
+            s += str[i_1].toLowerCase();
         }
     }
     return s;

@@ -12,12 +12,12 @@ var quicklySort = function (arr) {
     // 定义两个数组, 一个用来存放 在比标高小的数, 一个用来存放比标杆大的数
     var left = [];
     var right = [];
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] < pivot) {
-            left.push(arr[i]);
+    for (var i_1 = 0; i_1 < arr.length; i_1++) {
+        if (arr[i_1] < pivot) {
+            left.push(arr[i_1]);
         }
         else {
-            right.push(arr[i]);
+            right.push(arr[i_1]);
         }
     }
     return quicklySort(left).concat([pivot], quicklySort(right));

@@ -7,19 +7,19 @@ var intersect = function (arr1, arr2) {
     var map = {};
     var result = [];
     for (var _i = 0, arr1_1 = arr1; _i < arr1_1.length; _i++) {
-        var i = arr1_1[_i];
-        if (map[i]) {
-            map[i]++;
+        var i_1 = arr1_1[_i];
+        if (map[i_1]) {
+            map[i_1]++;
         }
         else {
-            map[i] = 1;
+            map[i_1] = 1;
         }
     }
     for (var _a = 0, arr2_1 = arr2; _a < arr2_1.length; _a++) {
-        var i = arr2_1[_a];
-        if (map[i] > 0) {
-            result.push(i);
-            map[i]--;
+        var i_2 = arr2_1[_a];
+        if (map[i_2] > 0) {
+            result.push(i_2);
+            map[i_2]--;
         }
     }
     return result;
@@ -43,8 +43,8 @@ var formArr = function (arr) {
         }
         obj[intNum].push(item);
     });
-    for (var i in obj) {
-        newArr.push(obj[i]);
+    for (var i_3 in obj) {
+        newArr.push(obj[i_3]);
     }
     return newArr;
 };

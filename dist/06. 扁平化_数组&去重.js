@@ -19,17 +19,17 @@ var flatFun = function (list) {
     map(list);
     // 去重
     var result = [];
-    for (var i = 0; i < arr.length; i++) {
-        for (var k = i + 1; k < arr.length; k++) {
-            if (arr[i] === arr[k]) {
+    for (var i_1 = 0; i_1 < arr.length; i_1++) {
+        for (var k = i_1 + 1; k < arr.length; k++) {
+            if (arr[i_1] === arr[k]) {
                 // 这里需要注意的是, 前置 ++ 表示即赋值且自增
-                k = ++i;
+                k = ++i_1;
                 // 如果写成后置++ 那么需要向下面的表达一样
                 // i++
                 // k=i
             }
         }
-        result.push(arr[i]);
+        result.push(arr[i_1]);
     }
     return result;
 };
