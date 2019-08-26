@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02. Css盒模型</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        section {
+            background: #000;
+            /*overflow: hidden; !*块级元素格式化上下文*!*/
+        }
+
+        /*section article {*/
+        /*    height: 100px;*/
+        /*    margin-top: 10px;*/
+        /*    background: red;*/
+        /*}*/
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+
+        .right {
+            height: 110px;
+            background: red;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+    <p>content + padding + border + margin</p>
+    <p>基本概念: 标准模型 + IE模型</p>
+    <div>
+        <h5>问题1: 标准模型和IE模型的区别</h5>
+        答: 标准模型是不包括 padding 和 border; IE与它相反 <br>
+    </div>
+
+    <div>
+        <h5>问题2: CSS 如何设置这两种模型</h5>
+        box-sizing:content-box; 浏览器默认 <br>
+        box-sizing:border-box; <br>
+    </div>
+    <div>
+        <h5>问题3: JS如何设置获取盒模型对应的宽和高</h5>
+        01. dom.style.width/height <br>
+        02. dom.currentStyle.with/height 只有IE兼容 <br>
+        03. window.getComputedStyle(dom).width/height <br>
+    </div>
+    <div>
+        <h5>问题4: 解释盒模型边距重叠</h5>
+
+    </div>
+    <div>
+        <h5>问题5: BFC 或者 IFC</h5>
+        01. BFC的基本概念 <br>
+        02. BFC的原理 <br>
+        03. 如何创建BFC <br>
+        04. BFC的使用场景 <br>
+    </div>
+
+    <section>
+        <article class="left"></article>
+        <article class="right"></article>
+    </section>
+</div>
+</body>
+</html>

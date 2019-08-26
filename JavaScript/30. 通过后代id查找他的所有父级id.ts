@@ -15,7 +15,17 @@ const data = [{
                 },
                 {
                     id: '112',
-                    name: 'test112'
+                    name: 'test112',
+                    children: [
+                        {
+                            id: '1121',
+                            name: 'test1121'
+                        },
+                        {
+                            id: '1122',
+                            name: 'test1122'
+                        }
+                    ]
                 }
             ]
             
@@ -41,7 +51,7 @@ const bfs = (target, id) => {
     const queue = [...target];
     while (queue.length) {
         let current = queue.shift();
-        if (current.children) {
+        if (current.children && current.children.length) {
             queue.push(...current.children.map(v => ({...v, path: `${(current.path || current.id)} - ${v.id}`})));
         }
         if (current.id === id) {

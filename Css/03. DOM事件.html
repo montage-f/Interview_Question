@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03. DOM事件</title>
+</head>
+<body>
+<section>
+    <div>
+        基本概念:DOM事件的级别
+        <p>
+            DOM 0:
+            <code>
+                element.onclick=function(){}
+            </code>
+        </p>
+        <p>
+            DOM 2: 修改了事件绑定方式
+            <code>
+                element.addEventListener('click',function(){
+
+                },false)
+            </code>
+        </p>
+        <p>
+            DOM 3: 增加了很多事件类型
+            <code>
+                element.addEventListener('keyup',function(){
+
+                },false)
+            </code>
+        </p>
+    </div>
+    <div>
+        DOM事件模型: 捕获↓ (第一阶段), 冒泡↑ (第三阶段)<br>
+        <code>
+            window => document => html => body => ... => 目标元素
+        </code>
+    </div>
+    <div>DOM事件流</div>
+    <div>描述DOM事件捕获的具体流程</div>
+    <div>
+        Event对象的常见应用 <br>
+        <code>
+            event.preventDefault()<br>
+            event.stopPropagation()<br>
+            event.stoplmmediatePropagation()<br>
+            event.currentTarget 当前绑定的事件<br>
+            event.target
+        </code>
+    </div>
+    <div>
+        自定义事件 <br>
+        <code>
+            let eve=new Event('custom'); <br>
+            ev.addEventListener('custom',function(){ <br>
+            console.log('custom') <br>
+            }) <br>
+            ev.dispatchEvent(eve)
+        </code>
+    </div>
+</section>
+
+
+<div id="ev">
+    <style>
+        #ev {
+            width: 300px;
+            height: 100px;
+            background: red;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+    目标元素
+    <script>
+        let ev = document.querySelector('#ev');
+        window.addEventListener('click', () => {
+            console.log('window');
+        }, true); // true 表示在捕获阶段触发
+
+        document.addEventListener('click', () => {
+            console.log('document');
+        }, true);
+
+        document.addEventListener('click', () => {
+            console.log('html');
+        }, true);
+
+        document.addEventListener('click', () => {
+            console.log('body');
+        }, true);
+
+        ev.addEventListener('click', () => {
+            console.log('ev');
+        }, true);
+
+        // 自定义事件
+        let eve = new Event('test');
+        ev.addEventListener('test', function () {
+            console.log('test');
+        });
+        ev.dispatchEvent(eve);
+    </script>
+</div>
+</body>
+</html>

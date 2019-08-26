@@ -26,7 +26,17 @@ var data = [{
                     },
                     {
                         id: '112',
-                        name: 'test112'
+                        name: 'test112',
+                        children: [
+                            {
+                                id: '1121',
+                                name: 'test1121'
+                            },
+                            {
+                                id: '1122',
+                                name: 'test1122'
+                            }
+                        ]
                     }
                 ]
             },
@@ -51,7 +61,7 @@ var bfs = function (target, id) {
     var queue = target.slice();
     var _loop_1 = function () {
         var current = queue.shift();
-        if (current.children) {
+        if (current.children && current.children.length) {
             queue.push.apply(queue, current.children.map(function (v) { return (__assign({}, v, { path: (current.path || current.id) + " - " + v.id })); }));
         }
         if (current.id === id) {
