@@ -26,14 +26,3 @@ const getIndex = (arr: number[], num: number) => {
     
 };
 console.log(getIndex(arrs, 100));
-
-const getIndex2 = (arr, num) => {
-    let n = 0;
-    for (let i = 0; i < arr.length; i++) {
-        n++;
-        if (arr[i] === num) {
-            return {i, n};
-        }
-    }
-};
-console.log(getIndex2(arrs, 100));
