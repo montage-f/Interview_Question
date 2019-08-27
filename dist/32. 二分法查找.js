@@ -25,13 +25,3 @@ var getIndex = function (arr, num) {
     }
 };
 console.log(getIndex(arrs, 100));
-var getIndex2 = function (arr, num) {
-    var n = 0;
-    for (var i_2 = 0; i_2 < arr.length; i_2++) {
-        n++;
-        if (arr[i_2] === num) {
-            return { i: i_2, n: n };
-        }
-    }
-};
-console.log(getIndex2(arrs, 100));
