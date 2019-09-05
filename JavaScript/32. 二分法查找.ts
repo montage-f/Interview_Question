@@ -10,11 +10,8 @@ const getIndex = (arr: number[], num: number) => {
     let n = 0;
     while (start <= end) {
         let i = Math.floor((start + end) / 2);
-        n++;
         if (num === arr[i]) {
-            return {
-                i, n
-            };
+            return i;
         }
         if (num > arr[i]) {
             start = i + 1;
@@ -23,6 +20,6 @@ const getIndex = (arr: number[], num: number) => {
             end = i - 1;
         }
     }
-    
+
 };
 console.log(getIndex(arrs, 100));

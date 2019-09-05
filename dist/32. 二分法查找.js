@@ -10,11 +10,8 @@ var getIndex = function (arr, num) {
     var n = 0;
     while (start <= end) {
         var i_1 = Math.floor((start + end) / 2);
-        n++;
         if (num === arr[i_1]) {
-            return {
-                i: i_1, n: n
-            };
+            return i_1;
         }
         if (num > arr[i_1]) {
             start = i_1 + 1;
