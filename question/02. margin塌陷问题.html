@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02. margin塌陷问题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .parent p {
+            border: 1px solid #ccc;
+        }
+
+        .parent div {
+            overflow: hidden;
+        }
+
+        .parent p:nth-of-type(1) {
+            margin-bottom: 20px;
+        }
+
+        .parent p:nth-of-type(2) {
+            margin-top: 30px;
+        }
+
+        /*行内元素, padding, 和 margin 是撑不开高度, 只撑得开宽度*/
+
+        .parent-2 {
+            margin-top: 50px;
+        }
+
+        .parent-2 div {
+            overflow: hidden;
+        }
+
+        .parent-2 div.children-1 p {
+            margin-bottom: 20px;
+        }
+
+        .parent-2 div.children-2 p {
+            margin-top: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+<a href="https://blog.csdn.net/qq_32381815/article/details/78987828">解释详情</a>
+<div class="parent">
+    <p>你好-1</p>
+    <p>你好-2</p>
+</div>
+
+<div class="parent-2">
+    <div class="children-1">
+        <p>你好-1</p>
+    </div>
+    <div class="children-2">
+        <p>你好-2</p>
+    </div>
+</div>
+</body>
+
+</html>
