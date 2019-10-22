@@ -7,8 +7,14 @@
 // 输入: "Let's take LeetCode contest"
 // 输出: "s'teL ekat edoCteeL tsetnoc"
 
-export default (str) => {
+export const reverseWord1 = (str) => {
     return str.split(' ')
+    .map((item) => item.split('').reverse().join(''))
+    .join(' ');
+};
+
+export const reverseWord2 = (str) => {
+    return str.match(/[\w']+/g)
     .map((item) => item.split('').reverse().join(''))
     .join(' ');
 };
