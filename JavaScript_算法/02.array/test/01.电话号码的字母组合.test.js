@@ -12,8 +12,9 @@
 // 输入："23"
 // 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
-import {letterCombinations} from '../01.电话号码的字母组合';
+import {letterCombinations, letterCombinations_2} from '../01.电话号码的字母组合';
 
 test('电话号码的字母组合', () => {
     expect(letterCombinations('23')).toStrictEqual(['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']);
+    expect(letterCombinations_2('23')).toStrictEqual(['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']);
 });

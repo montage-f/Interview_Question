@@ -54,3 +54,27 @@ const chargeMapList = (mapList) => {
         return result;
     }
 };
+
+// 方法二
+
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+export const letterCombinations_2 = (digits) => {
+    return digits.split('')
+    .map((num) => {
+        if (map.has(num)) {
+            return map.get(num).split('');
+        }
+    })
+    .reduce((p, i) => {
+        const result = [];
+        for (let k of p) {
+            for (let j of i) {
+                result.push(k + j);
+            }
+        }
+        return result;
+    });
+};
