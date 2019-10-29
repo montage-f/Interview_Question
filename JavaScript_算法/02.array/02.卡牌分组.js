@@ -23,22 +23,7 @@
  * @return {boolean}
  */
 // 这个地方有个问题, 如果是三个三个一组的话, 就会报错, 也就是, 当前函数, 只能以2张卡片为一组
-const hasGroupsSizeX = (deck) => {
-    const result = deck.sort((a, b) => a - b);
-    const resultLength = Math.floor(result.length / 2);
-    if (resultLength < 1) return false;
-    const arr = [];
-    for (let i = 0; i < resultLength; i++) {
-        arr.push(result.splice(0, 2));
-    }
-    return arr.map(([key, value]) => {
-        return key === value;
-    })
-    .every(item => item);
-};
-
-//
-const hasGroupsSizeX_2 = (deck) => {
+export const hasGroupsSizeX_2 = (deck) => {
     // 循环之后, 就会拿到每一组值的个数,
     // 这个时候, 我们就知道, 最小组的长度,
     // 如果最小组的长度为偶数, 则应该取他的最大公约数为一组的长度
@@ -72,4 +57,3 @@ const hasGroupsSizeX_2 = (deck) => {
     }
     return group[0] > 1;
 };
-console.log(hasGroupsSizeX_2([1, 1, 1, 2, 2, 2, 8, 3, 3, 3]));
